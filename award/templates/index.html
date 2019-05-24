@@ -2,5 +2,22 @@
 
 {{block.super}}
 {%block content%}
+<div class="container-fluid">
+  <div class="row">
+    {%for project in projects%}
+    <div class="col-md-4">
+      <div class="card">
+          <img class="img-fluid" src="{{project.image.url}}" alt="">
+          <div class="card-footer">
+              <p>{{project.name}}</p>
+          </div>
+      </div>
+
+    </div>
+    {%endfor%}
+
+  </div>
+
+</div>
 
 {%endblock%}

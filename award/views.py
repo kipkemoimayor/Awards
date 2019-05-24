@@ -1,10 +1,17 @@
 from django.shortcuts import render,redirect
 from .forms import PostForm
+from .models import Projects
+from django.http import HttpResponse,Http404,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+
+    try:
+        projects=Projects.objects.all()
+    except Exception as e:
+        raise  Http404()
+    return render(request,'index.html',{"projects":projects})
 
 @login_required(login_url='/accounts/login/')
 def post(request):
