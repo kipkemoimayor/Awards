@@ -11,6 +11,7 @@ class Projects(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     description=models.TextField(max_length=320)
     link=models.CharField(max_length=60)
+    date=models.DateField(auto_now=True)
 
 
 class Profile(models.Model):
