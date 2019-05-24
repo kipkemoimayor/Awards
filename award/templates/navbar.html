@@ -18,14 +18,20 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{%url 'profile'%}">Profile</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          {%if user.is_authenticated%}
+          <a class="dropdown-item" href="/logout">Log out</a>
+          {%else%}
+          <a class="dropdown-item" href="/accounts/login/">Login</a>
+          {%endif%}
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
+      {%if user.is_authenticated%}
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link disabled" href="#">{{user}}</a>
       </li>
+      {%endif%}
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

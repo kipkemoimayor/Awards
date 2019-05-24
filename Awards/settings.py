@@ -32,7 +32,7 @@ SECRET_KEY = 'ov65vmmy_boog-=%o6$-+r41@=94zj&t5lf_$be428a0rj&g2v'
 # DEBUG = True
 #
 # ALLOWED_HOSTS = []
-
+LOGIN_REDIRECT_URL='/'
 REGISTRATION_OPEN=True
 
 
