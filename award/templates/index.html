@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>It Worked again</h1>
+{%extends 'base.html'%}
 
-  </body>
-</html>
+{{block.super}}
+{%block content%}
+<div class="jumbotron">
+  <h1>Welcome</h1>
+</div>
+{%endblock%}

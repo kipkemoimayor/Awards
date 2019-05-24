@@ -1,0 +1,36 @@
+{%load bootstrap4%}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    {%block styles%}
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#000000">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="{%static 'css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{%static 'css/mdb.css'%}">
+    <link  href="{%static 'css/style.css'%}" rel="stylesheet">
+    <link rel="icon" href="{%static 'img/in.png'%}">
+    {%endblock%}
+  </head>
+  <body>
+    {%block content%}
+
+    {%endblock%}
+
+    {%block scripts%}
+    <script src="{%static 'js/jquery-3.3.1.min.js'%}" type="text/javascript"></script>
+    <script src="{%static 'js/bootstrap.min.js'%}" type="text/javascript"></script>
+    <script src="{%static 'js/mdb.min.js'%}" type="text/javascript"></script>
+    <script src="{%static 'js/popper.min.js'%}" type="text/javascript"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="{%static 'js/main.js'%}" type="text/javascript"></script>
+    {%endblock%}
+
+  </body>
+</html>
