@@ -9,3 +9,6 @@ def index(request):
 def post(request):
     form=PostForm()
     return render(request,'post.html',{'form':form})
+
+def profile(request):
+    return render(request,'profile.html' )
