@@ -29,3 +29,7 @@ def post(request):
 @login_required(login_url='/accounts/login/')
 def profile(request):
     return render(request,'profile.html' )
+
+def project_detail(request,project_id):
+
+    return render(request,'details.html')

@@ -13,3 +13,11 @@
 #link{
   width: 10%;
 }
+.image{
+  margin: 8px;
+}
+img:hover{
+  zoom:104%;
+  transition: 300ms;
+
+}
