@@ -29,9 +29,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ov65vmmy_boog-=%o6$-+r41@=94zj&t5lf_$be428a0rj&g2v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+#
+# ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = []
+REGISTRATION_OPEN=True
 
 
 # Application definition
