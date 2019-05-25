@@ -136,8 +136,21 @@
   </div>
     <br><br>
   <div class="row">
-
-      <div class="col-md-6">
+    <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="ments">
+          <p>comments <i class="far fa-comments"></i></p>
+          <hr>
+          {%if comments%}
+          {%for con in comments%}
+          <p> <i class="fas fa-quote-left"></i>{{con.comment}}</p>
+          <i>by -- {{con.user}}</i>
+          {%endfor%}
+          {%else%}
+          <p class="alert alert-info">Be the 1st to comment</p>
+          {%endif%}
+        </div>
+        {%if user.is_authenticated%}
         {%for j in projects%}
         <form class="" action="/project/{{j.id}}/" method="post">
           {%csrf_token%}
@@ -145,18 +158,12 @@
           <button class="btn btn-outline-default" type="submit" name="button">Comment</button>
         </form>
         {%endfor%}
+        {%else%}
+        <a href="/accounts/login/"><button class="btn btn-outline-default" type="submit" name="button">Sign in To leave a comment</button></a>
+        {%endif%}
       </div>
-      <div class="col-md-6">
-        <div class="ments">
-          <p>comments</p>
-          {%for con in comments%}
-          <p>{{con.comment}}</p>
-          <i>by -- {{con.user}}</i>
-          {%endfor%}
-        </div>
 
-
-      </div>
+      <div class="col-md-2"></div>
   </div>
 <br><br><br>
 </div>
