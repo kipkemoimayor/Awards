@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import PostForm,RateForm,ReviewForm
+from .forms import PostForm,RateForm,ReviewForm,UpdateForm
 from .models import Projects,Rates,Comments
 from django.http import HttpResponse,Http404,HttpResponseRedirect,JsonResponse
 from django.contrib.auth.decorators import login_required
@@ -29,7 +29,16 @@ def post(request):
     return render(request,'post.html',{'form':form})
 @login_required(login_url='/accounts/login/')
 def profile(request):
-    return render(request,'profile.html' )
+    if request.method=='POST':
+        form=UpdateForm(request.POST,request.FILES)
+        if form.is_valid():
+            profile=form.save(commit=False)
+            profile.user=request.user
+            profile.save()
+        return redirect('profile')
+    else:
+        form=UpdateForm()
+    return render(request,'profile.html', {'form':form})
 
 def project_detail(request,project_id):
     try:
