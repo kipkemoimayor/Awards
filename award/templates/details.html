@@ -1,5 +1,5 @@
 {%extends 'base.html'%}
-
+{%load bootstrap4%}
 {{block.super}}
 {%block content%}
 {%for i in projects%}
@@ -18,9 +18,12 @@
         </div>
         <div class="col-md-3">
           {%if user.is_authenticated%}
-          <button class="btn btn-outline-default" type="button" name="button">Rate</button>
+          <br>
+          <!-- <button class="btn btn-outline-default" type="button" name="button">Rate</button> -->
           <div class="form">
-            <form class="" action="index.html" method="post">
+            <form class="" action="project/{{i.id}}" method="post">
+              {%csrf_token%}
+              {%bootstrap_form form%}
               <button class="btn btn-outline-default" type="submit" name="button">Submit</button>
             </form>
 
