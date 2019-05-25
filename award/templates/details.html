@@ -30,7 +30,7 @@
           <button id='love' class="btn btn-outline-default" type="button" name="button">Rate</button>
           {%if auth  is 0 %}
           <div class="form animated fadeIn">
-            <form id='send' class="" action="project/{{i.id}}" method="post">
+            <form id='send' class="" action="/project/{{i.id}}/" method="post">
               {%csrf_token%}
               {%bootstrap_form form%}
               <button class="btn btn-outline-default" type="submit" name="button">Submit</button>
@@ -133,6 +133,30 @@
 
     </div>
 
+  </div>
+    <br><br>
+  <div class="row">
+
+      <div class="col-md-6">
+        {%for j in projects%}
+        <form class="" action="/project/{{j.id}}/" method="post">
+          {%csrf_token%}
+          {%bootstrap_form review%}
+          <button class="btn btn-outline-default" type="submit" name="button">Comment</button>
+        </form>
+        {%endfor%}
+      </div>
+      <div class="col-md-6">
+        <div class="ments">
+          <p>comments</p>
+          {%for con in comments%}
+          <p>{{con.comment}}</p>
+          <i>by -- {{con.user}}</i>
+          {%endfor%}
+        </div>
+
+
+      </div>
   </div>
 <br><br><br>
 </div>

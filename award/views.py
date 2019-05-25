@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
-from .forms import PostForm,RateForm
-from .models import Projects,Rates
+from .forms import PostForm,RateForm,ReviewForm
+from .models import Projects,Rates,Comments
 from django.http import HttpResponse,Http404,HttpResponseRedirect,JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -54,6 +54,7 @@ def project_detail(request,project_id):
             rate=form.save(commit=False)
             rate.user=request.user
             rate.project=project_id
+            #review
             rate.save()
             return redirect('details',project_id)
     else:
@@ -91,7 +92,23 @@ def project_detail(request,project_id):
 
     auth=len(arr1)
 
-    return render(request,'details.html',{'projects':projects,'form':form,'usability':average_usa,'design':average_des,'content':average_con,'average':averageRating,'auth':auth,'all':all,'ave':ave})
+
+    if request.method=='POST':
+        review=ReviewForm(request.POST)
+        if review.is_valid():
+            comment=review.save(commit=False)
+            comment.user=request.user
+            comment.pro_id=project_id
+            comment.save()
+            return redirect('details',project_id)
+    else:
+        review=ReviewForm()
+
+    try:
+        user_comment=Comments.objects.filter(pro_id=project_id)
+    except Exception as e:
+        raise Http404()
+    return render(request,'details.html',{'projects':projects,'form':form,'usability':average_usa,'design':average_des,'content':average_con,'average':averageRating,'auth':auth,'all':all,'ave':ave,'review':review,'comments':user_comment})
 
 # def ajaxRequest(request,project_id):
 #     if request.method=='POST':
