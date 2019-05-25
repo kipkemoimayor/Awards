@@ -14,6 +14,8 @@ class Projects(models.Model):
     description=models.TextField(max_length=320)
     link=models.CharField(max_length=60)
     date=models.DateField(auto_now=True)
+    screen1=models.ImageField(upload_to='screenshot/',blank=True)
+    screen2=models.ImageField(upload_to='screenshot/',blank=True)
 
 
 class Profile(models.Model):
@@ -28,3 +30,8 @@ class Rates(models.Model):
     content=models.PositiveIntegerField(default=0,validators=[MaxValueValidator(10)])
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     project=models.IntegerField(default=0)
+
+class Comments(models.Model):
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
+    comment=models.TextField(max_length=200)
+    pro_id=models.IntegerField(default=0)
