@@ -2,13 +2,51 @@
 
 {{block.super}}
 {%block content%}
-<div class="container-fluid">
+{%for i in projects%}
+<div style="background-image:url({{i.image.url}});" class=" single">
+  <div class="overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <h1 class="hed">{{i.name}}</h1>
+          <p class="i">by <b class='b'>{{i.user}} </b> with 10.00</p>
+          <div class="design">
+              <a href="">content</a>
+          </div>
+
+        </div>
+        <div class="col-md-3">
+          {%if user.is_authenticated%}
+          <button class="btn btn-outline-default" type="button" name="button">Rate</button>
+          <div class="form">
+            <form class="" action="index.html" method="post">
+              <button class="btn btn-outline-default" type="submit" name="button">Submit</button>
+            </form>
+
+          </div>
+          {%else%}
+            <button class="btn btn-outline-default" type="button" name="button">Login to rate</button>
+          {%endif%}
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+{%endfor%}
+<div class="container">
   <div class="row">
+    <div class="col-md-2"></div>
     {%for project in projects%}
-    <div class="col-md-4">
+    <div class="col-md-8">
+      <br>
+      <p class="head">{{project.description}}</p>
       <div class="card">
         <div class="image">
-            <a class="img" href="/project/{{project.id}}">  <img class="img-fluid" src="{{project.image.url}}" alt=""></a>
+            <a class="img" href="{{project.link}}">  <img class="img-fluid" src="{{project.image.url}}" alt=""></a>
         </div>
 
           <div class="card-footer">
@@ -18,6 +56,19 @@
 
     </div>
     {%endfor%}
+    <div class="col-md-2"></div>
+
+  </div>
+  <hr class="bg-default">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="links">
+        <a href="#">Screenshot</a>
+        <a href="#">Votes</a>
+          <a href="#">Comments</a>
+      </div>
+
+    </div>
 
   </div>
 

@@ -21,3 +21,68 @@ img:hover{
   transition: 300ms;
 
 }
+.single{
+  height: 60vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: none !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
+}
+.overlay{
+  background-color: rgba(0,0,0,0.5);
+  height: 60vh;
+}
+.overlay:hover{
+  background-color: rgba(0,0,0,0.6);
+  transition: 500ms;
+}
+.overlay:left{
+  transition: 500ms;
+}
+.head{
+  font-weight: 400;
+  font-size: 17px;
+  text-align: center;
+}
+.links{
+  text-align: center;
+  color: black;
+}
+.links a{
+  color: black;
+  padding: 10px;
+  font-weight: 500;
+
+}
+.links a:hover{
+  color: #0008;
+}
+.links a:first-child{
+  text-decoration: underline;
+  text-decoration-style: solid;
+}
+.hed{
+  color: white;
+  text-align: center;
+  font-weight: 800;
+  font-family: cursive;
+  margin-top: 100px;
+}
+.i{
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+}
+.i b{
+  color:#2bbbad ;
+}
+.design a{
+
+}
+.btn-outline-default{
+  border-radius: 30px !important;
+}
+.form{
+  display: ;
+}
