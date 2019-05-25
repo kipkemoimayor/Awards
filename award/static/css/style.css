@@ -165,3 +165,24 @@ strong{
   height: 300px;
   width: auto;
 }
+body{
+    background-color: #f4f7f6;
+}
+.navbar{
+  background-color: #f4f7f6!important;
+  box-shadow: none !important;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+#title{
+  margin-right: 350px;
+  font-weight: 500;
+
+}
+.login{
+  color: black;
+  font-weight: 500;
+  padding: 5px;
+}
+.login:hover{
+  color:rgba(0,0,0,0.5);
+}
