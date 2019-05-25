@@ -28,7 +28,7 @@
           <br>
 
           <button id='love' class="btn btn-outline-default" type="button" name="button">Rate</button>
-          {%if auth  is 0 %}
+          {%if user.id   not in   auth   %}
           <div class="form animated fadeIn">
             <form id='send' class="" action="/project/{{i.id}}/" method="post">
               {%csrf_token%}
@@ -86,8 +86,11 @@
     <div class="col-md-12">
       {%for screen in projects%}
       {% if screen.screen1 or screen.screen2%}
-      <img id='shots' height="300" width="auto" src="{{screen.screen1.url}}" alt="">
-      <img height="300" width="auto"  src="{{screen.screen2.url}}" alt="">
+      <div class="images">
+        <img id='shots' class='img-fluid' width="auto" src="{{screen.screen1.url}}" alt="">
+        <img  class='img-fluid'  src="{{screen.screen2.url}}" alt="">
+      </div>
+
       {%else%}
       {%endif%}
       {%endfor%}
@@ -102,12 +105,14 @@
         <div class="list-group">
           <ul class="list-group">
             {%if all%}
-            {%for us in all%}
+
             <table id='comm' class="table">
               <th>Voters</th>
               <th>Rating</th>
               <th>average</th>
+              {%for us in all%}
               <tr>
+
                 <td>{{us.user}}</td>
                 <td>  <div class="dsign">
                       <a href="">{{us.design}}.0</a>
@@ -116,11 +121,13 @@
 
 
                   </div></td>
+
                   <td><b class="tt">{{ave}}</b></td>
               </tr>
+              {%endfor%}
 
             </table>
-            {%endfor%}
+
             {%else%}
             <li class="list-group-item alert alert-info">No votes Available</li>
 

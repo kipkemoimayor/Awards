@@ -34,7 +34,7 @@ def profile(request):
 def project_detail(request,project_id):
     try:
         projects=Projects.objects.filter(id=project_id)
-        all=Rates.objects.filter(id=project_id)
+        all=Rates.objects.filter(project=project_id)
     except Exception as e:
         raise Http404()
     #user single
@@ -90,7 +90,7 @@ def project_detail(request,project_id):
     for use in votes:
         arr1.append(use.user_id)
 
-    auth=len(arr1)
+    auth=arr1
 
 
     if request.method=='POST':
