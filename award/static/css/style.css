@@ -21,8 +21,8 @@
   width: 100%;
   zoom:102%;
 }
-.dta{
-  float: left;
+.dta,.fa-pastafarianism{
+  float: right;
 }
 /* img:hover{
   zoom:101%;
@@ -232,4 +232,7 @@ body{
   color: #202121;
   box-shadow: none !important;
 
+}
+.check{
+  padding: 10px;
 }
