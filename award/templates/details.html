@@ -78,15 +78,15 @@
   <div class="row">
     <div class="col-md-12">
       <div class="links">
-        <a href="#">Screenshot</a>
-        <a href="#">Votes</a>
+        <a href="#shots">Screenshot</a>
+        <a href="#comm">Votes</a>
           <a href="#">Comments</a>
       </div>
     </div>
     <div class="col-md-12">
       {%for screen in projects%}
       {% if screen.screen1 or screen.screen2%}
-      <img height="300" width="auto" src="{{screen.screen1.url}}" alt="">
+      <img id='shots' height="300" width="auto" src="{{screen.screen1.url}}" alt="">
       <img height="300" width="auto"  src="{{screen.screen2.url}}" alt="">
       {%else%}
       {%endif%}
@@ -97,13 +97,13 @@
 
       <div class="card comments">
         <div class="card-header">
-          <h4> Votes Award users </h4>
+          <h4> Votes Award users {{all|length}} </h4>
         </div>
         <div class="list-group">
           <ul class="list-group">
             {%if all%}
             {%for us in all%}
-            <table class="table">
+            <table id='comm' class="table">
               <th>Voters</th>
               <th>Rating</th>
               <th>average</th>
