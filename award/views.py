@@ -33,6 +33,7 @@ def profile(request):
 def project_detail(request,project_id):
     try:
         projects=Projects.objects.filter(id=project_id)
+        
     except Exception as e:
         raise Http404()
 

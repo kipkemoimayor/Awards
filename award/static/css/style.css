@@ -83,7 +83,7 @@ img:hover{
 .design{
   margin-top: 30px;
   text-align: center;
-  padding: 5px;
+
 }
 .design a{
   color: white;
@@ -97,8 +97,8 @@ img:hover{
   border-color: #2bbbad;
   border-width: 2.5px;
 }
-.design a:last-child{
-  border-color: #879;
+.design .b{
+  border-color: #786;
   border-width:2.5px;
 }
 
@@ -116,4 +116,12 @@ img:hover{
 }
 #alert{
   display: none;
+}
+#de,#us,#con{
+  position: relative;
+  top: 50px;
+  left: -70px;
+  padding: 0;
+  font-weight: 500;
+  margin: 0;
 }
