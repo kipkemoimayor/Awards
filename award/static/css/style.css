@@ -268,3 +268,9 @@ body{
   background-size: cover;
   /* background-attachment: fixed; */
 }
+#profile{
+  background-color: white !important;
+  box-shadow: :none!important;
+  color: #2bbbad;
+  padding:8px;
+}

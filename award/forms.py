@@ -1,4 +1,4 @@
-from .models import Projects,Rates,Comments
+from .models import Projects,Rates,Comments,Profile
 from django import forms
 
 class PostForm(forms.ModelForm):
@@ -15,3 +15,8 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model=Comments
         exclude=['user','pro_id']
+
+class UpdateForm(forms.ModelForm):
+    class Meta:
+        model=Profile
+        exclude=['user']
