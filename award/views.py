@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .forms import PostForm,RateForm
-from .models import Projects
+from .models import Projects,Rates
 from django.http import HttpResponse,Http404,HttpResponseRedirect,JsonResponse
 from django.contrib.auth.decorators import login_required
 
@@ -33,7 +33,7 @@ def profile(request):
 def project_detail(request,project_id):
     try:
         projects=Projects.objects.filter(id=project_id)
-        
+
     except Exception as e:
         raise Http404()
 
@@ -48,7 +48,26 @@ def project_detail(request,project_id):
     else:
         form=RateForm()
 
-    return render(request,'details.html',{'projects':projects,'form':form})
+    #logic
+
+    votes=Rates.objects.filter(project=project_id)
+    usability=[]
+    design=[]
+    content=[]
+
+    for i in votes:
+        usability.append(i.usability)
+        design.append(i.design)
+        content.append(i.content)
+
+    average_usa=round(sum(usability)/len(usability),1)
+    average_des=round(sum(design)/len(design),1)
+    average_con=round(sum(content)/len(content),1)
+
+    averageRating=round((average_con+average_des+average_usa)/3,1)
+
+
+    return render(request,'details.html',{'projects':projects,'form':form,'usability':average_usa,'design':average_des,'content':average_con,'average':averageRating})
 
 # def ajaxRequest(request,project_id):
 #     if request.method=='POST':
