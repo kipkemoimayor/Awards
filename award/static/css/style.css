@@ -186,3 +186,34 @@ body{
 .login:hover{
   color:rgba(0,0,0,0.5);
 }
+/* home page*/
+
+.home{
+  background-image: url(../img/cov.jpg);
+  height: 60vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+.overly{
+    background-color: rgba(0,0,0,0.5);
+    height: 60vh;
+    text-align: center;
+}
+.overly p{
+  color: white;
+  font-weight: 500;
+}
+#awa{
+  text-align: center;
+  color: white;
+  font-weight: 500;
+}
+.overly button:hover{
+  background-color: rgba(255,255,255,0.2) !important;
+}
+.overly button{
+    border-radius: 30px !important;
+}
