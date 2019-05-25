@@ -92,9 +92,49 @@
       {%endif%}
       {%endfor%}
     </div>
+    <div class="col-md-12">
+      <br><br>
+
+      <div class="card comments">
+        <div class="card-header">
+          <h4> Votes Award users </h4>
+        </div>
+        <div class="list-group">
+          <ul class="list-group">
+            {%if all%}
+            {%for us in all%}
+            <table class="table">
+              <th>Voters</th>
+              <th>Rating</th>
+              <th>average</th>
+              <tr>
+                <td>{{us.user}}</td>
+                <td>  <div class="dsign">
+                      <a href="">{{us.design}}.0</a>
+                      <a href="">{{us.usability}}.0</a>
+                      <a class='b' href="">{{us.content}}.0</a>
+
+
+                  </div></td>
+                  <td><b class="tt">{{ave}}</b></td>
+              </tr>
+
+            </table>
+            {%endfor%}
+            {%else%}
+            <li class="list-group-item alert alert-info">No votes Available</li>
+
+            {%endif%}
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
-
+<br><br><br>
 </div>
 
 {%endblock%}

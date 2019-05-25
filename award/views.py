@@ -3,6 +3,7 @@ from .forms import PostForm,RateForm
 from .models import Projects,Rates
 from django.http import HttpResponse,Http404,HttpResponseRedirect,JsonResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 # Create your views here.
 def index(request):
@@ -33,9 +34,19 @@ def profile(request):
 def project_detail(request,project_id):
     try:
         projects=Projects.objects.filter(id=project_id)
-
+        all=Rates.objects.filter(id=project_id)
     except Exception as e:
         raise Http404()
+    #user single
+    count=0
+    for i in all:
+        count+=i.usability
+        count+=i.design
+        count+=i.content
+
+    if count>0:
+        ave=round(count/3,1)
+
 
     if request.method=='POST':
         form=RateForm(request.POST)
@@ -80,7 +91,7 @@ def project_detail(request,project_id):
 
     auth=len(arr1)
 
-    return render(request,'details.html',{'projects':projects,'form':form,'usability':average_usa,'design':average_des,'content':average_con,'average':averageRating,'auth':auth})
+    return render(request,'details.html',{'projects':projects,'form':form,'usability':average_usa,'design':average_des,'content':average_con,'average':averageRating,'auth':auth,'all':all,'ave':ave})
 
 # def ajaxRequest(request,project_id):
 #     if request.method=='POST':

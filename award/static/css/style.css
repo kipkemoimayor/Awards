@@ -16,11 +16,11 @@
 .image{
   margin: 8px;
 }
-img:hover{
-  zoom:104%;
+/* img:hover{
+  zoom:101%;
   transition: 800ms;
 
-}
+} */
 .single{
   height: 70vh;
   background-repeat: no-repeat;
@@ -127,4 +127,31 @@ img:hover{
 }
 strong{
   color:white;
+}
+.comments{
+  background-color: #FFFFFF;
+}
+/* .dsign{
+  text-align: center;
+
+} */
+.dsign a{
+  color: white;
+  font-weight: 500;
+  padding: 15px;
+  border: 1px solid red;
+  border-radius: 80px;
+  border-width: 2.5px;
+}
+.dsign a:first-child{
+  border-color: #2bbbad;
+  border-width: 2.5px;
+}
+.dsign .b{
+  border-color: #786;
+  border-width:2.5px;
+}
+.tt{
+  font-weight: 500;
+  font-size: 20px;
 }
