@@ -14,7 +14,15 @@
   width: 10%;
 }
 .image{
-  margin: 8px;
+  height: 300px;
+}
+.image img{
+  height: 258px;
+  width: 100%;
+  zoom:102%;
+}
+.dta{
+  float: left;
 }
 /* img:hover{
   zoom:101%;
@@ -216,4 +224,12 @@ body{
 }
 .overly button{
     border-radius: 30px !important;
+}
+.content{
+  font-family: "apercu",sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #202121;
+  box-shadow: none !important;
+
 }
