@@ -59,12 +59,18 @@ def project_detail(request,project_id):
         usability.append(i.usability)
         design.append(i.design)
         content.append(i.content)
+    if len(usability) > 0 or len(design)> 0 or len(content) >0:
 
-    average_usa=round(sum(usability)/len(usability),1)
-    average_des=round(sum(design)/len(design),1)
-    average_con=round(sum(content)/len(content),1)
+        average_usa=round(sum(usability)/len(usability),1)
+        average_des=round(sum(design)/len(design),1)
+        average_con=round(sum(content)/len(content),1)
 
-    averageRating=round((average_con+average_des+average_usa)/3,1)
+        averageRating=round((average_con+average_des+average_usa)/3,1)
+    else:
+        average_usa=0.0
+        average_des=0.0
+        average_con=0.0
+        averageRating=0.0
     '''
     Restricting user to rate only once
     '''
