@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import PostForm
+from .forms import PostForm,RateForm
 from .models import Projects
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
@@ -36,4 +36,15 @@ def project_detail(request,project_id):
     except Exception as e:
         raise Http404()
 
-    return render(request,'details.html',{'projects':projects})
+    if request.method=='POST':
+        form=RateForm(request.POST)
+        if form.is_valid():
+            rate=form.save(commit=False)
+            rate.user=request.user
+            rate.project=project_id
+            rate.save()
+            return redirect('details',project_id)
+    else:
+        form=RateForm()
+
+    return render(request,'details.html',{'projects':projects,'form':form})

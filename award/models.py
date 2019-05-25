@@ -19,3 +19,10 @@ class Profile(models.Model):
     bio=models.CharField(max_length=60)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     phone=models.IntegerField()
+
+class Rates(models.Model):
+    design=models.IntegerField(default=0)
+    usability=models.IntegerField(default=0)
+    content=models.IntegerField(default=0)
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
+    project=models.ForeignKey(Projects,on_delete=models.CASCADE)
