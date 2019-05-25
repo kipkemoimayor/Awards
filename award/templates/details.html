@@ -26,7 +26,9 @@
         <div class="col-md-3">
           {%if user.is_authenticated%}
           <br>
+
           <button id='love' class="btn btn-outline-default" type="button" name="button">Rate</button>
+          {%if auth  is 0 %}
           <div class="form animated fadeIn">
             <form id='send' class="" action="project/{{i.id}}" method="post">
               {%csrf_token%}
@@ -35,6 +37,9 @@
             </form>
 
           </div>
+          {%else%}
+          <p class="alert alert-info">Thank You for  Rating This app</p>
+          {%endif%}
           {%else%}
             <a href="/accounts/login/"><button class="btn btn-outline-default" type="button" name="button">Login to rate</button></a>
           {%endif%}

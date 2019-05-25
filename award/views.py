@@ -65,9 +65,16 @@ def project_detail(request,project_id):
     average_con=round(sum(content)/len(content),1)
 
     averageRating=round((average_con+average_des+average_usa)/3,1)
+    '''
+    Restricting user to rate only once
+    '''
+    arr1=[]
+    for use in votes:
+        arr1.append(use.user_id)
 
+    auth=len(arr1)
 
-    return render(request,'details.html',{'projects':projects,'form':form,'usability':average_usa,'design':average_des,'content':average_con,'average':averageRating})
+    return render(request,'details.html',{'projects':projects,'form':form,'usability':average_usa,'design':average_des,'content':average_con,'average':averageRating,'auth':auth})
 
 # def ajaxRequest(request,project_id):
 #     if request.method=='POST':
