@@ -19,8 +19,8 @@
         <div class="col-md-3">
           {%if user.is_authenticated%}
           <br>
-          <!-- <button class="btn btn-outline-default" type="button" name="button">Rate</button> -->
-          <div class="form">
+          <button id='love' class="btn btn-outline-default" type="button" name="button">Rate</button>
+          <div class="form animated fadeIn">
             <form class="" action="project/{{i.id}}" method="post">
               {%csrf_token%}
               {%bootstrap_form form%}
@@ -29,7 +29,7 @@
 
           </div>
           {%else%}
-            <button class="btn btn-outline-default" type="button" name="button">Login to rate</button>
+            <a href="/accounts/login/"><button class="btn btn-outline-default" type="button" name="button">Login to rate</button></a>
           {%endif%}
         </div>
       </div>
