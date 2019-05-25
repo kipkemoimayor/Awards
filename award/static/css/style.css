@@ -92,3 +92,6 @@ img:hover{
   border: 2px solid #2bbbad;
   padding: 20px;
 }
+#alert{
+  display: none;
+}

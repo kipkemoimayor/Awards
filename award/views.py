@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import PostForm,RateForm
 from .models import Projects
-from django.http import HttpResponse,Http404,HttpResponseRedirect
+from django.http import HttpResponse,Http404,HttpResponseRedirect,JsonResponse
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -48,3 +48,14 @@ def project_detail(request,project_id):
         form=RateForm()
 
     return render(request,'details.html',{'projects':projects,'form':form})
+
+# def ajaxRequest(request,project_id):
+#     if request.method=='POST':
+#         form=RateForm(request.POST)
+#         if form.is_valid():
+#             rate=form.save(commit=False)
+#             rate.user=request.user
+#             rate.project=project_id
+#             rate.save()
+#             data={'success':'Your ratings have been recorded successfully '}
+#             return JsonResponse(data)

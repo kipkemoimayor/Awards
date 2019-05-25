@@ -21,7 +21,7 @@
           <br>
           <button id='love' class="btn btn-outline-default" type="button" name="button">Rate</button>
           <div class="form animated fadeIn">
-            <form class="" action="project/{{i.id}}" method="post">
+            <form id='send' class="" action="project/{{i.id}}" method="post">
               {%csrf_token%}
               {%bootstrap_form form%}
               <button class="btn btn-outline-default" type="submit" name="button">Submit</button>

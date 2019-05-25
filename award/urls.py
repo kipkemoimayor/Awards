@@ -10,6 +10,7 @@ urlpatterns=[
     url(r'project/post/$',views.post,name='post'),
     url(r'^user/profile/$',views.profile,name='profile'),
     url(r'^project/(\d+)/',views.project_detail,name='details'),
+    # url(r'^ajax/review/(\d+)$',views.ajaxRequest,name='review'),
 ]
 
 if settings.DEBUG:
