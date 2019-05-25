@@ -241,10 +241,30 @@ body{
   text-align: center;
   margin: auto;
   margin-top: 10vh;
-  border: 1px solid rgba(0,0,0,0.2);
+  border: 1px solid #2bbbad;
   padding: 20px;
+  color: white;
+  font-weight: 400;
+}
+.loggin h2{
+  font-weight: 500;
+}
+.loggin a{
+  color: #2bbbad;
+}
+.loggin form{
+  opacity: 0.8;
+  color: white;
+
 }
 .loggin button{
   padding: 7px !important;
   width: 80%;
+}
+#logg{
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* background-attachment: fixed; */
 }
