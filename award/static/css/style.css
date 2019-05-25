@@ -236,3 +236,15 @@ body{
 .check{
   padding: 10px;
 }
+.loggin{
+  width: 70%;
+  text-align: center;
+  margin: auto;
+  margin-top: 10vh;
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 20px;
+}
+.loggin button{
+  padding: 7px !important;
+  width: 80%;
+}

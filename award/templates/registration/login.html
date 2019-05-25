@@ -7,13 +7,19 @@
   <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
-      <form class="form-group" action="/accounts/login/" method="POST">
-        {%csrf_token%}
-        {%bootstrap_form form%}
-        <button class="btn btn-default" type="submit" name="button">Submit Project</button>
-        <p>Dont have an account register <a href="/accounts/register/">here</a></p>
+      <div class="loggin">
+        <h2>Login</h2>
+        <img height="80"  src="/static/img/log.svg" alt="">
+        <form class="form-group" action="/accounts/login/" method="POST">
+          {%csrf_token%}
+          {%bootstrap_form form%}
+          <button class="btn btn-default" type="submit" name="button">Login</button>
+          <br> <br>
+          <p>Dont have an account ? register <a href="/accounts/register/">here</a></p>
 
-      </form>
+        </form>
+      </div>
+
     </div>
     <div class="col-md-3"></div>
 
