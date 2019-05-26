@@ -17,7 +17,7 @@
           <div class="loggin">
             <h2>Sign Up</h2>
             <img height="80"  src="/static/img/log.svg" alt="">
-            <form class="form-group" action="/accounts/login/" method="POST">
+            <form class="form-group" action="/accounts/register/" method="POST">
               {%csrf_token%}
               {%bootstrap_form form %}
               <button class="btn btn-default" type="submit" name="button">Register</button>

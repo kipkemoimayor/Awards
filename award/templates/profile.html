@@ -27,11 +27,13 @@
 
         <img height="120" class="rounded-circle hoverable " src="" alt="">
         <span id="user">{{user}}</span>
-        <br><br><br>
-        <i class="alert alert-warning">Please update your profile to get started</i>
+
+        <p style="padding:5px" class="alert alert-warning">Please update your profile to get started</p>
+        <br>
           </div>
       </div>
       {%endif%}
+      <br>
       <p>{{user.email}}</p>
 
       <p>You have {{projects|length}} Projects</p>
