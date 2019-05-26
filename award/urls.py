@@ -16,7 +16,8 @@ urlpatterns=[
     # url(r'^ajax/review/(\d+)$',views.ajaxRequest,name='review'),
     url(r'^api/projects/$',views.ProjectList.as_view()),
     url(r'^api/profile/$',views.ProfileList.as_view()),
-     url(r'^token/', obtain_auth_token),
+    url(r'^token/', obtain_auth_token),
+    url(r'^developer/api/$',views.apiView,name='api'),
 ]
 
 if settings.DEBUG:

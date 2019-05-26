@@ -1,0 +1,78 @@
+{%extends 'base.html'%}
+{%load bootstrap4%}
+{{block.super}}
+{%block content%}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 sidePro bg-dark" >
+      {%if profile%}
+      {%for i in profile%}
+      <div class="improfile">
+        <div class="over">
+
+
+        <img height="120" class="rounded-circle hoverable " src="{{i.profile.url}}" alt="">
+        <span id="user">{{user}}</span>
+        <p>Status {{i.bio}}</p>
+          </div>
+      </div>
+      <br>
+
+        <p>Phone:{{i.phone}}</p>
+      {%endfor%}
+      {%else%}
+      <div class="improfile">
+        <div class="over">
+
+
+        <img height="120" class="rounded-circle hoverable " src="" alt="">
+        <span id="user">{{user}}</span>
+        <br><br><br>
+        <i class="alert alert-warning">Please update your profile to get started</i>
+          </div>
+      </div>
+      {%endif%}
+      <p>{{user.email}}</p>
+
+      <p>Developer</p>
+      <a class="btn btn-outline-danger" href="/logout/">Logout</a>
+
+
+    </div>
+    <div class="col-md-7">
+      <h1>Developer Guide</h1>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="jumbotron">
+            <p>Hello We are excited to release a new feature in our application, The API We are so glad to allow developers use Our data to Make amazing applications</p>
+            <br>
+            <b>Are you excited ?</b>
+            <p>Users end-point <a href="/api/profile/">View</a></p>
+            <br>
+
+          </div>
+
+
+        </div>
+        <div class="col-md-6">
+          <div class="jumbotron">
+          <p>This API has two main End Points The users end point where you can view all users in this application and their amazing profiles</p>
+          <p>The second End-Point is the Projects Available in this application</p>
+          <p>Projects End-point <a href="/api/projects/">View</a></p>
+
+          </div>
+
+          <br>
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{%endblock%}

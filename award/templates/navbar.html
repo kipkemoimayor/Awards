@@ -7,11 +7,15 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <form id='search' role="search" action="{%url 'search'%}" class="form-inline my-2 my-lg-0 animated fadeIn" >
       <input required name='name' class="form-control mr-sm-2" type="search" placeholder="Search by name" aria-label="Search">
-      <button class="btn btn-outline-default" type="submit"<i class="fas fa-search"></i></button>
+      <button class="btn btn-outline-default" type="submit"<i class="fas fa-search"><i class="fas fa-search"></i></i></button>
     </form>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a id="click" class="nav-link" ><i class="fas fa-search"></i> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item bg-danger">
+        <a style="color:white"  href="{%url 'api'%}"  class="nav-link" >API<span class="sr-only">(current)</span></a>
+
       </li>
 
     </ul>

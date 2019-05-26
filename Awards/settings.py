@@ -36,11 +36,20 @@ LOGIN_REDIRECT_URL='/'
 REGISTRATION_OPEN=True
 
 
+#rest settings
+
+REST_FRAMEWORK={
+    'DEFAULT_AUTHENTICATION_CLASSES':(
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
+
 # Application definition
 
 INSTALLED_APPS = [
     'award',
     'rest_framework',
+    'rest_framework.authtoken',
     'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
