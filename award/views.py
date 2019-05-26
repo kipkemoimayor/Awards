@@ -61,6 +61,8 @@ def project_detail(request,project_id):
 
     if count>0:
         ave=round(count/3,1)
+    else:
+        ave=0
 
 
     if request.method=='POST':

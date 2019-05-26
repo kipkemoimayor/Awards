@@ -301,3 +301,26 @@ body{
   border: 1px solid #2bbbad;
   border-radius: 80px;
 }
+.loggi{
+  width: 90%;
+  margin: auto;
+  border: 1px solid #2bbbad;
+  padding: 20px;
+  color: black;
+  font-weight: 400;
+}
+.loggi h2{
+  font-weight: 500;
+}
+.loggi a{
+  color: #2bbbad;
+}
+.loggi form{
+  color: black;
+
+}
+.loggi button{
+  padding: 7px !important;
+  width: 80%;
+  text-align: center;
+}

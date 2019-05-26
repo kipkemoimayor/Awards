@@ -3,7 +3,34 @@
 
 {{block.super}}
 {%block content%}
-<div class="container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="loggi">
+            <h2>Submit Your Project</h2>
+              <form class="form-group" action="/project/post/" method="POST" enctype="multipart/form-data">
+              {%csrf_token%}
+              {%bootstrap_form form%}
+              <button class="btn btn-default" type="submit" name="button">Submit Project</button>
+              <br> <br>
+            </form>
+          </div>
+
+        </div>
+        <div class="col-md-3"></div>
+
+      </div>
+
+
+    </div>
+
+
+
+
+
+
+<!-- <div class="container">
   <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
@@ -19,6 +46,6 @@
   </div>
 
 
-</div>
+</div> -->
 
 {%endblock%}
