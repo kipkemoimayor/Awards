@@ -349,3 +349,6 @@ body{
     top:-80px;
   }
 }
+#search{
+  display: none;
+}

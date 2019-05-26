@@ -6,6 +6,11 @@ $(document).ready(function() {
 
   })
 
+  $("#click").click(function(){
+    $("#search").show()
+    $("#click").hide()
+  })
+
   // $("#send").submit(function(event) {
   //   event.preventDefault()
   //   form=$("#send")

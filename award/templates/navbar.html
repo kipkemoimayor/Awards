@@ -1,17 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-
+    <a class="nav-link" href="/"><img height="50"  src="/static/img/log.svg" alt=""></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-
+    <form id='search' class="form-inline my-2 my-lg-0 animated fadeIn">
+      <input required  class="form-control mr-sm-2" type="search" placeholder="Search by name" aria-label="Search">
+      <button class="btn btn-outline-default" type="submit" name="button"><i class="fas fa-search"></i></button>
     </form>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a id="click" class="nav-link" ><i class="fas fa-search"></i> <span class="sr-only">(current)</span></a>
       </li>
 
     </ul>
