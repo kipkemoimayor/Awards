@@ -5,6 +5,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4 sidePro bg-dark" >
+      {%if profile%}
       {%for i in profile%}
       <div class="improfile">
         <div class="over">
@@ -12,12 +13,25 @@
 
         <img height="120" class="rounded-circle hoverable " src="{{i.profile.url}}" alt="">
         <span id="user">{{user}}</span>
+        <p>Status {{i.bio}}</p>
           </div>
       </div>
       <br>
 
         <p>Phone:{{i.phone}}</p>
       {%endfor%}
+      {%else%}
+      <div class="improfile">
+        <div class="over">
+
+
+        <img height="120" class="rounded-circle hoverable " src="" alt="">
+        <span id="user">{{user}}</span>
+        <br><br><br>
+        <i class="alert alert-warning">Please update your profile to get started</i>
+          </div>
+      </div>
+      {%endif%}
       <p>{{user.email}}</p>
 
       <p>You have {{projects|length}} Projects</p>
@@ -55,7 +69,7 @@
 
     </div>
     <div class="col-md-7">
-      <h1>{{user}}'s Projects</h1>
+      <h1>My Projects</h1>
       <hr>
       {%if projects%}
       <div class="row">
@@ -82,10 +96,11 @@
 
         {%endfor%}
 
+
       </div>
       {%else%}
       <p class="alert alert-info">You have Not Submitted any Project <br>
-      Get started <a href="#">Here</a> To get a star</p>
+      Get started <a href="{%url 'post'%}">Here</a> To get a star</p>
       {%endif%}
 
     </div>
