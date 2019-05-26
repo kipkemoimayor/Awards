@@ -12,6 +12,8 @@ urlpatterns=[
     url(r'^project/(\d+)/',views.project_detail,name='details'),
     url(r'^search/projects/results/$',views.search,name="search"),
     # url(r'^ajax/review/(\d+)$',views.ajaxRequest,name='review'),
+    url(r'^api/projects/$',views.ProjectList.as_view()),
+    url(r'^api/profile/$',views.ProfileList.as_view()),
 ]
 
 if settings.DEBUG:
