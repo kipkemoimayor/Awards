@@ -2,6 +2,8 @@ from . import views
 from django.conf.urls import url
 from django.conf.urls.static import static
 from django.conf import settings
+from rest_framework.authtoken.views import obtain_auth_token
+
 
 #url urlpatterns
 
@@ -14,6 +16,7 @@ urlpatterns=[
     # url(r'^ajax/review/(\d+)$',views.ajaxRequest,name='review'),
     url(r'^api/projects/$',views.ProjectList.as_view()),
     url(r'^api/profile/$',views.ProfileList.as_view()),
+     url(r'^token/', obtain_auth_token),
 ]
 
 if settings.DEBUG:
