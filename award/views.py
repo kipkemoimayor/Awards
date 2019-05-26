@@ -31,7 +31,7 @@ def post(request):
 def profile(request):
     current_user=request.user
     try:
-        profis=Profile.objects.filter(user=current_user)
+        profis=Profile.objects.filter(user=current_user)[0:1]
         user_projects=Projects.objects.filter(user=current_user)
     except Exception as e:
         raise  Http404()

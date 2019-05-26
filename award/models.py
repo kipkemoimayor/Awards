@@ -34,6 +34,8 @@ class Profile(models.Model):
     bio=models.CharField(max_length=60)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     phone=models.IntegerField()
+    class Meta:
+        ordering=['-profile']
 
 class Rates(models.Model):
     design=models.PositiveIntegerField(default=0,validators=[MaxValueValidator(10)])
