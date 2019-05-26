@@ -19,7 +19,8 @@
         <p>Phone:{{i.phone}}</p>
       {%endfor%}
       <p>{{user.email}}</p>
-      <p>You have </p>
+
+      <p>You have {{projects|length}} Projects</p>
       <a class="btn btn-outline-danger" href="/logout/">Logout</a>
 
 
@@ -56,7 +57,32 @@
     <div class="col-md-7">
       <h1>{{user}}'s Projects</h1>
       <hr>
-      {%if pro%}
+      {%if projects%}
+      <div class="row">
+        {%for project in projects%}
+        <div class="col-md-6">
+          <div class="card content">
+            <div class="image">
+                <a class="img" href="/project/{{project.id}}">  <img class="img-fluid" src="{{project.image.url}}" alt=""></a>
+            </div>
+            <div class="check">
+              <i class="dta">{{project.date}}</i>
+              <p>{{project.name}}</p>
+
+              <hr>
+              <div class="">
+                <i class="fas fa-pastafarianism"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+
+          </div>
+          <br>
+        </div>
+
+        {%endfor%}
+
+      </div>
       {%else%}
       <p class="alert alert-info">You have Not Submitted any Project <br>
       Get started <a href="#">Here</a> To get a star</p>

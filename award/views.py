@@ -32,6 +32,7 @@ def profile(request):
     current_user=request.user
     try:
         profis=Profile.objects.filter(user=current_user)
+        user_projects=Projects.objects.filter(user=current_user)
     except Exception as e:
         raise  Http404()
     if request.method=='POST':
@@ -43,7 +44,7 @@ def profile(request):
         return redirect('profile')
     else:
         form=UpdateForm()
-    return render(request,'profile.html', {'form':form,'profile':profis})
+    return render(request,'profile.html', {'form':form,'profile':profis,'projects':user_projects})
 
 def project_detail(request,project_id):
     try:
