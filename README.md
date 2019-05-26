@@ -3,8 +3,9 @@
 #### By **[Collins kipkemoi](https://github.com/kipkemoimayor)**
 ## Description
 This is a web application handcrafted and developed using Django framework, This app allows users to register and Share their best art of work web development. Once a user has posted the website or app to be reviewed, The app is reviewed in three categories Content,Usability and design
-![Alt text](instagram/static/img/2.png?raw=true "Title")
-![Alt text](instagram/static/img/3.png?raw=true "Title")
+![Alt text](award/static/img/1.png)
+![Alt text](award/static/img/2.png?)
+
 ## Setup/Installation Requirements
 * A PC mainly with an Operating system.
 * Python3.6 or later is installed in your PC.
@@ -49,8 +50,10 @@ NO known bugs as at the moment please reach to us if you see any.
 * CSS
 * Django
 * PostgreSQL Database
-![](instagram/static/img/1.png)
-![](instagram/static/img/4.png)
+![](award/static/img/5.png)
+![](award/static/img/4.png)
+<img src="award/static/img/6.png" width="450" height="400">
+<img src="award/static/img/3.png" width="450" height="400">
 
 ## Support and contact details
 Email collinskipkemoi24@gmail.com
