@@ -146,18 +146,15 @@ strong{
 .dsign a{
   color: white;
   font-weight: 500;
-  padding: 15px;
+  padding: 8px;
   border: 1px solid red;
   border-radius: 80px;
-  border-width: 2.5px;
 }
 .dsign a:first-child{
   border-color: #2bbbad;
-  border-width: 2.5px;
 }
 .dsign .b{
   border-color: #786;
-  border-width:2.5px;
 }
 .tt{
   font-weight: 500;
@@ -219,8 +216,19 @@ body{
   color: white;
   font-weight: 500;
 }
+
 .overly button:hover{
   background-color: rgba(255,255,255,0.2) !important;
+}
+.overl button:hover{
+  background-color: rgba(255,255,255,0.2) !important;
+  color:#2bbbad !important ;
+  border-color: #2bbbad !important;
+  border-width: thin !important;
+}
+.overl button{
+    border-radius: 30px !important;
+    border-width: thin !important;
 }
 .overly button{
     border-radius: 30px !important;
@@ -325,5 +333,11 @@ body{
   text-align: center;
 }
 #visit{
+
+}
+@media screen and (max-width:360px)  {
+  .overl{
+    display: none;
+  }
 
 }

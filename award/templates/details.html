@@ -61,15 +61,23 @@
     <div class="col-md-8">
       <br>
       <p class="head">{{project.description}}</p>
-      <div class="card">
-        <div class="image">
-            <a class="img" href="{{project.link}}">  <img class="img-fluid" src="{{project.image.url}}" alt=""></a>
-        </div>
+      <div class="overl">
+          <button class="btn btn-outline-dark" type="button" name="button">Jquery</button>
+          <button class="btn btn-outline-dark" type="button" name="button">Css3</button>
+          <button class="btn btn-outline-dark" type="button" name="button">Javascript</button>
+          <button class="btn btn-outline-dark" type="button" name="button">UI</button>
+          <button class="btn btn-outline-dark" type="button" name="button">Material Design</button><br>
+          <button class="btn btn-outline-dark" type="button" name="button">Bootstrap</button>
+          <button class="btn btn-outline-dark" type="button" name="button">SweetAlert</button>
+          <button class="btn btn-outline-dark" type="button" name="button">Bootstrap</button>
+          <button class="btn btn-outline-dark" type="button" name="button">Touch</button>
+          <button class="btn btn-outline-dark" type="button" name="button">Design</button>
+          <button class="btn btn-outline-dark" type="button" name="button">Animation</button>
+          <button class="btn btn-outline-dark" type="button" name="button">Machine AI</button>
+          <button class="btn btn-outline-dark" type="button" name="button">Graphics</button>
 
-          <div class="card-footer">
-              <p>{{project.name}}</p> <i>{{project.date}}</i>
-          </div>
       </div>
+      <br>
 
     </div>
     {%endfor%}
@@ -111,7 +119,7 @@
             <table id='comm' class="table">
               <th>Voters</th>
               <th>Rating</th>
-              <th>average</th>
+              <th>Stars</th>
               {%for us in all%}
               <tr>
 
@@ -124,7 +132,7 @@
 
                   </div></td>
 
-                  <td><b class="tt">{{ave}}</b></td>
+                  <td><b class="tt"><i style="color:red" class="far fa-star "></i><i  style="color:red" class="far fa-star"></i><i class="far fa-star"></i></b></td>
               </tr>
               {%endfor%}
 

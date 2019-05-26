@@ -17,6 +17,12 @@ class Projects(models.Model):
     screen1=models.ImageField(upload_to='screenshot/',blank=True)
     screen2=models.ImageField(upload_to='screenshot/',blank=True)
 
+    class Meta:
+        ordering=['-name']
+
+    def __str__(self):
+        self.name
+
 
 class Profile(models.Model):
     profile=models.ImageField(upload_to='profile/')
