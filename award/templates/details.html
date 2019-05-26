@@ -172,7 +172,7 @@
         <form class="" action="/project/{{j.id}}/" method="post">
           {%csrf_token%}
           {%bootstrap_form review%}
-          <button class="btn btn-outline-default" type="submit" name="button">Comment</button>
+          <button id='area' class="btn btn-outline-default" type="submit" name="button">Comment</button>
         </form>
         {%endfor%}
         {%else%}
