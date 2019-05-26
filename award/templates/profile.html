@@ -2,20 +2,34 @@
 {%load bootstrap4%}
 {{block.super}}
 {%block content%}
-<a href="/logout/">Logout</a>
-
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-4">
-      <p>{{user}}</p>
+    <div class="col-md-4 sidePro bg-dark" >
+      {%for i in profile%}
+      <div class="improfile">
+        <div class="over">
 
-      <button id='profile' data-toggle="modal" data-target="#modalSubscriptionForm" class="btn btn-default" type="button" name="button">Update Profile</button>
+
+        <img height="120" class="rounded-circle hoverable " src="{{i.profile.url}}" alt="">
+        <span id="user">{{user}}</span>
+          </div>
+      </div>
+      <br>
+
+        <p>Phone:{{i.phone}}</p>
+      {%endfor%}
+      <p>{{user.email}}</p>
+      <p>You have </p>
+      <a class="btn btn-outline-danger" href="/logout/">Logout</a>
+
+
+      <button id='profile' data-toggle="modal" data-target="#modalSubscriptionForm" class="btn btn-default" type="button" name="button" >Update Profile</button>
       <div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header text-center">
-            <h4 class="modal-title w-100 font-weight-bold">Edit Profile</h4>
+            <h4 class="modal-title w-100 font-weight-bold " style="color:black">Edit Profile</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -39,7 +53,7 @@
 
 
     </div>
-    <div class="col-md-8">
+    <div class="col-md-7">
       <h1>{{user}}'s Projects</h1>
       <hr>
       {%if pro%}

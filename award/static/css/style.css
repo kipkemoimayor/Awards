@@ -274,3 +274,31 @@ body{
   color: #2bbbad;
   padding:8px;
 }
+.sidePro{
+  height: 550px;
+  color: white;
+  box-shadow: 1px 1px 5px black;
+}
+.improfile{
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 30vh;
+
+
+}
+.over{
+    padding: 10px;
+    height: 30vh;
+    background-color: rgba(0,0,0,0.5);
+}
+#user{
+  padding: 20px;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 22px;
+  border: 1px solid #2bbbad;
+  border-radius: 80px;
+
+}
