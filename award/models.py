@@ -12,7 +12,7 @@ class Projects(models.Model):
     content=models.IntegerField(default=0)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     description=models.TextField(max_length=320)
-    link=models.CharField(max_length=60)
+    link=models.URLField(max_length=60)
     date=models.DateField(auto_now=True)
     screen1=models.ImageField(upload_to='screenshot/',blank=True)
     screen2=models.ImageField(upload_to='screenshot/',blank=True)
