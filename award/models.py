@@ -22,6 +22,11 @@ class Projects(models.Model):
 
     def __str__(self):
         self.name
+    @classmethod
+    def search_project(cls,word):
+        searched=cls.objects.filter(name__icontains=word)
+        return searched
+
 
 
 class Profile(models.Model):
